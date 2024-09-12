@@ -1,3 +1,5 @@
+// 定义泛型类
+
 export class DataObj<A> {
   private data: A;
   constructor(data: A) {

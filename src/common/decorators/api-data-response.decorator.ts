@@ -1,12 +1,4 @@
-/*
-
- * @Date: 2021-12-13 09:48:49
- * @LastEditTime: 2022-09-18 11:07:52
- * @LastEditors: Please set LastEditors
- * @Description: 返回值放入data属性中的openApi 装饰器
- * @FilePath: /meimei-admin/src/common/decorators/api-data-response.decorator.ts
- * You can you up，no can no bb！！
- */
+// 构建Swagger文档，描述响应数据的结构
 
 import { applyDecorators, Type } from '@nestjs/common';
 import { ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
