@@ -1,16 +1,4 @@
-/*
-
- * @Date: 2021-12-22 12:55:33
- * @LastEditTime: 2022-09-18 11:08:03
- * @LastEditors: Please set LastEditors
- * @Description: 操作权限装饰器
- * @FilePath: /meimei-admin/src/common/decorators/requires-permissions.decorator.ts
- * You can you up，no can no bb！！
- */
-/*
-https://docs.nestjs.com/openapi/decorators#decorators
-*/
-
+// 将权限许可元数据存储起来
 import { SetMetadata } from '@nestjs/common';
 import { PERMISSION_KEY_METADATA } from '../contants/decorator.contant';
 import { LogicalEnum } from '../enums/logical.enum';

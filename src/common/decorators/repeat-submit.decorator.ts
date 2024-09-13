@@ -1,13 +1,4 @@
-/*
-
- * @Date: 2022-01-19 12:49:14
- * @LastEditTime: 2022-09-18 11:08:02
- * @LastEditors: Please set LastEditors
- * @Description: 防止重复提交装饰器
- * @FilePath: /meimei-admin/src/common/decorators/repeat-submit.decorator.ts
- * You can you up，no can no bb！！
- */
-
+// 防止请求过于频繁
 import { SetMetadata } from '@nestjs/common';
 import { REOEATSUBMIT_METADATA } from '../contants/decorator.contant';
 

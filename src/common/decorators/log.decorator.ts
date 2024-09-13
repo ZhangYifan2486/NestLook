@@ -1,18 +1,7 @@
-/*
-
- * @Date: 2021-12-22 16:54:36
- * @LastEditTime: 2022-09-18 11:08:00
- * @LastEditors: Please set LastEditors
- * @Description: 日志记录装饰器
- * @FilePath: /meimei-admin/src/common/decorators/log.decorator.ts
- * You can you up，no can no bb！！
- */
 import { SetMetadata } from '@nestjs/common';
 import { LOG_KEY_METADATA } from '../contants/decorator.contant';
 
-/*
-https://docs.nestjs.com/openapi/decorators#decorators
-*/
+// 枚举类型 用来区分不同的操作
 export enum BusinessTypeEnum {
   /* 其他 */
   other = '1',
@@ -42,6 +31,7 @@ export enum BusinessTypeEnum {
   clean = '9',
 }
 
+// 日志控制
 export class LogOption {
   /* 操作模块 */
   title: string;
