@@ -1,12 +1,3 @@
-/*
-
- * @Date: 2021-12-08 18:06:20
- * @LastEditTime: 2022-10-27 22:53:37
- * @LastEditors: Please set LastEditors
- * @Description: 数据库基类
- * @FilePath: /meimei-admin/src/common/entities/base.entity.ts
- * You can you up，no can no bb！！
- */
 import { IsOptional, IsString } from 'class-validator';
 import {
   Column,

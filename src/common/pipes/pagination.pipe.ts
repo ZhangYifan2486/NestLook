@@ -1,13 +1,6 @@
-/*
-
- * @Date: 2021-12-08 20:20:53
- * @LastEditTime: 2022-09-23 21:59:09
- * @LastEditors: Please set LastEditors
- * @Description: 分页器管道
- * @FilePath: /meimei-admin/src/common/pipes/pagination.pipe.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 计算需要的分页参数
+ * */
 import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
 
 @Injectable()

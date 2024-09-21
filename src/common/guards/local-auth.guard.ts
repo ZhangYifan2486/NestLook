@@ -1,12 +1,6 @@
-/*
-
- * @Date: 2021-12-09 14:30:28
- * @LastEditTime: 2022-09-18 11:07:15
- * @LastEditors: Please set LastEditors
- * @Description: 登录守卫 ，可进行登录日志记录
- * @FilePath: /meimei-admin/src/common/guards/local-auth.guard.ts
- * You can you up，no can no bb！！
- */
+/**
+ *  处理本地身份，记录登录失败日志
+ * */
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { Observable } from 'rxjs';

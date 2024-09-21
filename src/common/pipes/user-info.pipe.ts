@@ -1,13 +1,9 @@
-/*
-
- * @Date: 2021-12-10 12:43:30
- * @LastEditTime: 2022-09-18 11:07:28
- * @LastEditors: Please set LastEditors
- * @Description: 通过userId 获取用户其他信息的管道
- * @FilePath: /meimei-admin/src/common/pipes/user-info.pipe.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 这段代码定义了一个名为 UserInfoPipe 的自定义管道，
+ * 它使用 Redis 来获取用户的相关信息（如用户名、昵称、部门ID和部门名称）。
+ * 这个管道基于传递进来的参数元数据动态获取不同的用户信息，
+ * 从而简化了控制器中的处理逻辑。该管道主要应用于处理需要获取用户信息的场景，如通过用户ID来获取用户名、昵称等。
+ * */
 import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
 import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
 import {

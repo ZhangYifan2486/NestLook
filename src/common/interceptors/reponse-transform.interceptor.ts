@@ -1,19 +1,16 @@
-/*
-
- * @Date: 2021-12-08 18:50:04
- * @LastEditTime: 2022-09-18 11:07:07
- * @LastEditors: Please set LastEditors
- * @Description: 返回值转化拦截器
- * @FilePath: /meimei-admin/src/common/interceptors/reponse-transform.interceptor.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 用于在请求成功后提取数据
+ * */
 import {
   Injectable,
   NestInterceptor,
   ExecutionContext,
   CallHandler,
 } from '@nestjs/common';
+/**
+ * Reflector：Nest.js 提供的反射工具，允许我们从控制器或处理器上获取元数据。
+ * 在这个拦截器中，用它来获取 KEEP_KEY 元数据，以决定是否对响应数据进行包装。
+ * */
 import { Reflector } from '@nestjs/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

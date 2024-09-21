@@ -1,13 +1,6 @@
-/*
-
- * @Date: 2021-12-08 19:31:36
- * @LastEditTime: 2022-09-18 11:07:34
- * @LastEditors: Please set LastEditors
- * @Description: 全局错误拦截器
- * @FilePath: /meimei-admin/src/common/filters/all-exception.filter.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 异常捕获处理器
+ * */
 import {
   ExceptionFilter,
   Catch,

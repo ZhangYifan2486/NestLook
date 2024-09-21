@@ -1,3 +1,7 @@
+/**
+ * 判断是否需要jwt验证
+ * pubilc_key进行验证
+ * */
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';

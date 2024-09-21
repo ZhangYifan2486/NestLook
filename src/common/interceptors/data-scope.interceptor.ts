@@ -1,13 +1,16 @@
-/*
-
- * @Date: 2022-01-05 19:43:12
- * @LastEditTime: 2022-10-17 15:37:29
- * @LastEditors: Please set LastEditors
- * @Description: 数据权限拦截器
- * @FilePath: \meimei-admin\src\common\interceptors\data-scope.interceptor.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 使用用户的 userId 作为 Redis 缓存的键，获取用户的角色信息和部门 ID。
+ * 角色信息包含了用户的 roleKey 和 dataScope，用于判断用户的数据权限范围。
+ * 如果用户是超级管理员 (roleKey == 'admin')，则用户具有所有数据权限，直接返回，不进行数据范围限制。
+ *
+ * 对于非超级管理员，根据用户每个角色的 dataScope 属性生成对应的 SQL 查询条件。数据范围分为：
+ * 全部数据权限：无条件查询所有数据。
+ * 自定义数据权限：根据角色自定义的部门权限查询数据。
+ * 本部门数据权限：限制为用户所在部门的数据。
+ * 本部门及以下数据权限：用户部门及子部门的数据。
+ * 仅本人数据权限：仅限于用户自己的数据。
+ * 生成的 SQL 条件存储在 request.dataScope 中，供后续数据库查询使用。
+ * */
 import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
 import {
   Injectable,
@@ -29,6 +32,7 @@ export class DataScopeInterceptor implements NestInterceptor {
     @InjectRedis() private readonly redis: Redis,
   ) {}
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+    // 获取当前controller上的元数据
     const aliaObj: DeptOrUserAlias = this.reflector.get(
       DATASCOPE_KEY_METADATA,
       context.getHandler(),

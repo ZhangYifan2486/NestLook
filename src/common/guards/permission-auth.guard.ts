@@ -1,13 +1,7 @@
-/*
-
- * @Date: 2021-12-22 13:22:00
- * @LastEditTime: 2022-09-18 11:07:17
- * @LastEditors: Please set LastEditors
- * @Description: 权限守卫
- * @FilePath: /meimei-admin/src/common/guards/permission-auth.guard.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 检查当前用户是否具有访问特定资源的权限。
+ * 它通过从 Redis 中获取用户的权限列表并将其与控制器或处理程序上定义的权限进行比较来实现权限验证。
+ * */
 import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
@@ -23,6 +17,7 @@ export class PermissionAuthGuard implements CanActivate {
     private reflector: Reflector,
     @InjectRedis() private readonly redis: Redis,
   ) {}
+
   async canActivate(context: ExecutionContext) {
     const permissionObj = this.reflector.getAllAndOverride<PermissionObj>(
       PERMISSION_KEY_METADATA,

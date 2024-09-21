@@ -1,16 +1,6 @@
-/*
-
- * @Date: 2022-01-29 11:06:07
- * @LastEditTime: 2022-09-18 11:07:19
- * @LastEditors: Please set LastEditors
- * @Description: 防止重复提交守卫
- * @FilePath: /meimei-admin/src/common/guards/repeat-submit.guard.ts
- * You can you up，no can no bb！！
- */
-/*
-https://docs.nestjs.com/guards#guards
-*/
-
+/**
+ * 防止重复提交相同的请求
+ * */
 import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
@@ -26,6 +16,7 @@ export class RepeatSubmitGuard implements CanActivate {
     @InjectRedis() private readonly redis: Redis,
   ) {}
   async canActivate(context: ExecutionContext): Promise<boolean> {
+    // 提取元数据
     const repeatSubmitOption: RepeatSubmitOption = this.reflector.get(
       REOEATSUBMIT_METADATA,
       context.getHandler(),

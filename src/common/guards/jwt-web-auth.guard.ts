@@ -1,3 +1,6 @@
+/**
+ * 处理jwt异常
+ * */
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiException } from '../exceptions/api.exception';

@@ -1,13 +1,8 @@
-/*
-
- * @Date: 2021-12-08 19:47:38
- * @LastEditTime: 2022-09-18 11:07:04
- * @LastEditors: Please set LastEditors
- * @Description: 操作日志记录拦截器
- * @FilePath: /meimei-admin/src/common/interceptors/operation-log.interceptor.ts
- * You can you up，no can no bb！！
- */
-
+/**
+ * 这段代码是 OperationLogInterceptor 的实现，属于一个操作日志拦截器。
+ * 它会在每次 HTTP 请求处理完成后，记录请求的详细日志信息，
+ * 包括请求方式、请求参数、用户信息、操作结果等。日志记录过程主要依赖于 Redis 缓存的用户信息和日志服务来处理。
+ * */
 import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
 import {
   Injectable,

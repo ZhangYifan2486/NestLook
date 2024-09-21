@@ -1,12 +1,3 @@
-/*
-
- * @Date: 2021-12-09 10:11:33
- * @LastEditTime: 2022-09-18 11:07:46
- * @LastEditors: Please set LastEditors
- * @Description: 分页请求参数
- * @FilePath: /meimei-admin/src/common/dto/pagination.dto.ts
- * You can you up，no can no bb！！
- */
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { IsNumber, IsOptional, IsString } from 'class-validator';
